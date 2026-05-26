@@ -22,7 +22,6 @@ body{
   overflow-y:auto;
 }
 
-/* PAGE */
 .page{
   display:none;
   width:100%;
@@ -38,12 +37,32 @@ body{
   text-align:center;
 }
 
-/* TITLES */
+/* PAGE 1 */
+
+#p1{
+  flex-direction:row;
+  gap:60px;
+}
+
+.photo-frame{
+  padding:12px;
+  border:8px solid #ff4f8b;
+  background:white;
+  border-radius:20px;
+  box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+.photo-frame img{
+  width:300px;
+  height:300px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
 .name{
   font-family:'Bebas Neue',sans-serif;
-  font-size:90px;
+  font-size:70px;
   color:#ff4f8b;
-  text-shadow:0 0 10px white,0 0 20px #ff8fb1;
   margin-bottom:20px;
 }
 
@@ -52,22 +71,14 @@ body{
   font-size:58px;
   color:#ff4f8b;
   margin-bottom:18px;
-  letter-spacing:2px;
 }
 
-/* TEXT */
 .text{
   color:#ff4f8b;
-  font-size:25px;
-  line-height:1.6;
-  max-width:700px;
-}
-
-/* FINAL PAGE */
-#p7{
-  overflow-y:auto;
-  padding-top:40px;
-  padding-bottom:40px;
+  font-size:24px;
+  line-height:1.7;
+  max-width:500px;
+  text-align:left;
 }
 
 .final-text{
@@ -77,10 +88,9 @@ body{
   font-size:20px;
   line-height:1.8;
   text-align:center;
-  font-family:'Poppins',sans-serif;
+  padding-bottom:50px;
 }
 
-/* BUTTON */
 .btn{
   margin-top:25px;
   padding:14px 35px;
@@ -90,87 +100,150 @@ body{
   color:white;
   font-size:20px;
   cursor:pointer;
-  transition:0.3s;
 }
 
 .btn:hover{
   transform:scale(1.05);
 }
 
-.btn:disabled{
-  opacity:0.5;
-  cursor:not-allowed;
-}
-
-/* CAKE */
-.scene{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
+/* CANDLE PAGE */
 
 .cake{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  position:relative;
+  width:260px;
+  height:220px;
+}
+
+.layer1{
+  width:260px;
+  height:90px;
+  background:#ff8fab;
+  border-radius:15px;
+  position:absolute;
+  bottom:0;
+}
+
+.layer2{
+  width:200px;
+  height:70px;
+  background:#ffb3c6;
+  border-radius:15px;
+  position:absolute;
+  bottom:80px;
+  left:30px;
+}
+
+.layer3{
+  width:140px;
+  height:55px;
+  background:#ffc2d1;
+  border-radius:15px;
+  position:absolute;
+  bottom:140px;
+  left:60px;
 }
 
 .candle{
-  width:12px;
-  height:55px;
-  background:linear-gradient(to bottom,white,gold);
-  border-radius:10px;
-  position:relative;
+  width:18px;
+  height:60px;
+  background:white;
+  position:absolute;
+  bottom:190px;
+  border-radius:5px;
 }
+
+.c1{ left:70px; }
+.c2{ left:120px; }
+.c3{ left:170px; }
 
 .flame{
-  width:20px;
-  height:30px;
-  background:radial-gradient(circle,#fff4a3,orange);
-  position:absolute;
-  top:-28px;
-  left:-4px;
-  border-radius:50% 50% 50% 0;
-}
-
-.layer{
-  border:3px solid gold;
-  background:white;
-}
-
-.top{
-  width:100px;
-  height:45px;
-  border-radius:15px;
-}
-
-.middle{
-  width:160px;
-  height:55px;
-  border-radius:18px;
-  margin-top:5px;
-}
-
-.bottom{
-  width:230px;
-  height:65px;
-  border-radius:20px;
-  margin-top:5px;
-}
-
-.plate{
-  width:280px;
-  height:18px;
-  background:white;
+  width:18px;
+  height:28px;
+  background:orange;
   border-radius:50%;
-  margin-top:10px;
+  position:absolute;
+  top:-22px;
+  animation:flicker 0.4s infinite;
+}
+
+@keyframes flicker{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.1);}
+  100%{transform:scale(1);}
+}
+
+#finalMessage{
+  display:none;
+  margin-top:30px;
+  color:#ff4f8b;
+  font-size:28px;
+}
+
+/* CALL PAGE */
+
+.call-box{
+  background:white;
+  width:320px;
+  padding:30px;
+  border-radius:25px;
+  box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
+
+.incoming{
+  font-size:22px;
+  color:gray;
+}
+
+.caller{
+  margin-top:20px;
+  font-size:34px;
+  color:#ff4f8b;
+  font-weight:bold;
+}
+
+.age-text{
+  margin-top:25px;
+  font-size:24px;
+  color:#ff4f8b;
+  line-height:1.6;
+  display:none;
+}
+
+.call-buttons{
+  margin-top:35px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.accept,.decline{
+  border:none;
+  padding:14px 22px;
+  border-radius:50px;
+  color:white;
+  cursor:pointer;
+  font-size:18px;
+}
+
+.accept{
+  background:#28c76f;
+}
+
+.decline{
+  background:#ea5455;
+}
+
+.sorry{
+  margin-top:25px;
+  color:#ff4f8b;
+  display:none;
+  font-size:18px;
 }
 
 /* BOARD */
+
 .board{
   display:grid;
   grid-template-columns:repeat(4,80px);
-  grid-template-rows:repeat(4,80px);
   gap:5px;
   margin-top:20px;
 }
@@ -198,6 +271,7 @@ body{
 }
 
 /* GIFTS */
+
 .gift-box{
   display:flex;
   gap:20px;
@@ -212,8 +286,6 @@ body{
   overflow:hidden;
   cursor:pointer;
   border:3px solid transparent;
-  transition:0.3s;
-  box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
 .gift img{
@@ -224,44 +296,41 @@ body{
 
 .gift.selected{
   border:3px solid #ff4f8b;
-  transform:scale(1.05);
 }
 
-/* MOBILE */
 @media(max-width:768px){
 
+  #p1{
+    flex-direction:column;
+  }
+
+  .photo-frame img{
+    width:240px;
+    height:240px;
+  }
+
   .name{
-    font-size:60px;
+    font-size:45px;
   }
 
   .title{
-    font-size:42px;
+    font-size:40px;
   }
 
   .text{
+    text-align:center;
     font-size:20px;
   }
 
   .final-text{
     font-size:17px;
-    line-height:1.7;
-  }
-
-  .board{
-    grid-template-columns:repeat(4,65px);
-    grid-template-rows:repeat(4,65px);
   }
 
   .cell{
     width:65px;
     height:65px;
-    font-size:28px;
   }
 
-  .gift{
-    width:130px;
-    height:130px;
-  }
 }
 
 </style>
@@ -269,61 +338,179 @@ body{
 
 <body>
 
+<!-- AUDIO -->
+
+<audio id="ringtone" loop>
+  <source src="https://www.soundjay.com/phone/phone-ring-01.mp3" type="audio/mpeg">
+</audio>
+
 <!-- PAGE 1 -->
+
 <div class="page active" id="p1">
 
-  <div class="name">DUPIT 🎀❤️</div>
-
-  <div class="scene">
-    <div class="cake">
-      <div class="candle">
-        <div class="flame"></div>
-      </div>
-
-      <div class="layer top"></div>
-      <div class="layer middle"></div>
-      <div class="layer bottom"></div>
-      <div class="plate"></div>
-    </div>
+  <div class="photo-frame">
+    <img src="asserts/Birthday pic.png" alt="">
   </div>
 
-  <button class="btn" onclick="show('p2')">Next 💖</button>
+  <div>
+
+    <div class="name">HAPPY BIRTHDAY DUPIT 🎀</div>
+
+    <div class="text">
+
+      Congratulations bro… you survived another year
+      of your own stupidity 😭🎂
+      <br><br>
+
+      You’re becoming older 😂
+      <br><br>
+
+      Enjoy your cake,
+      photos, and fake maturity for one day 😌✨
+
+    </div>
+
+    <button class="btn" onclick="show('candlePage')">
+      Next 💖
+    </button>
+
+  </div>
+
+</div>
+
+<!-- CANDLE PAGE -->
+
+<div class="page" id="candlePage">
+
+  <div class="cake">
+
+    <div class="layer1"></div>
+    <div class="layer2"></div>
+    <div class="layer3"></div>
+
+    <div class="candle c1">
+      <div class="flame" id="flame1"></div>
+    </div>
+
+    <div class="candle c2">
+      <div class="flame" id="flame2"></div>
+    </div>
+
+    <div class="candle c3">
+      <div class="flame" id="flame3"></div>
+    </div>
+
+  </div>
+
+  <button class="btn" onclick="blowCandles()">
+    Blow Candles 💨
+  </button>
+
+  <div id="finalMessage">
+
+    Candles gone... May what all you wished come true...
+    This year you will get all you dreamed man.
+
+    <br>
+
+    <button class="btn" onclick="openCallPage()">
+      Next 💖
+    </button>
+
+  </div>
+
+</div>
+
+<!-- CALL PAGE -->
+
+<div class="page" id="callPage">
+
+  <div class="call-box">
+
+    <div class="incoming">
+      📞 Incoming Call
+    </div>
+
+    <div class="caller">
+      Accept the call 
+    </div>
+
+    <div class="age-text" id="ageText">
+      Congratulations 😭<br>
+      You are 22 now 💀🎂
+      <br>
+
+      <button class="btn" onclick="show('p2')">
+        Continue 💖
+      </button>
+    </div>
+
+    <div class="call-buttons" id="callBtns">
+
+      <button class="decline" onclick="declineCall()">
+        Decline ❌
+      </button>
+
+      <button class="accept" onclick="acceptCall()">
+        Accept 📞
+      </button>
+
+    </div>
+
+    <div class="sorry" id="sorryText">
+      Sorry 😭 Please accept the reality...
+    </div>
+
+  </div>
 
 </div>
 
 <!-- PAGE 2 -->
+
 <div class="page" id="p2">
 
   <div class="title">🎉 HAPPY BIRTHDAY 🎉</div>
 
-  <div class="text">
-    Happy Birthday ❤️🎂<br><br>
-    Turning 22 is just a number 😹✨<br>
-    Enjoy your life fully 💖
+  <div class="text" style="text-align:center;">
+
+    Turning 22...Age is just a number man...As you wish now you have a 
+    job...finally done with your studies...soon you will get what all you
+    dreamed...and live happily...dont know you still remeber what you told me 
+    that day...But soon you will have life you wantead
+    <br>
   </div>
 
-  <button class="btn" onclick="show('p3')">Next 💖</button>
+  <button class="btn" onclick="show('p3')">
+    Next 💖
+  </button>
 
 </div>
 
 <!-- PAGE 3 -->
+
 <div class="page" id="p3">
 
   <div class="title">📜 RULES</div>
 
-  <div class="text">
+  <div class="text" style="text-align:center;">
     Place 4 queens on 4x4 board<br>
-    No same row, column or diagonal
+    No same row
+    no same column 
+    no same diagonal
+    queen should not meet.
   </div>
 
-  <button class="btn" onclick="show('p4'); createBoard()">Next 💖</button>
+  <button class="btn" onclick="show('p4'); createBoard()">
+    Next 💖
+  </button>
 
 </div>
 
 <!-- PAGE 4 -->
+
 <div class="page" id="p4">
 
-  <div class="title">♟️ N-Queen Game</div>
+  <div class="title">solve this N-Queen </div>
 
   <div class="board" id="board"></div>
 
@@ -338,6 +525,7 @@ body{
 </div>
 
 <!-- PAGE 5 -->
+
 <div class="page" id="p5">
 
   <div class="title">🎁 Choose Gift</div>
@@ -365,14 +553,16 @@ body{
 </div>
 
 <!-- PAGE 6 -->
+
 <div class="page" id="p6">
 
   <div class="title">Not now... But Soon ❤️</div>
 
-  <div class="text">
+  <div class="text" style="text-align:center;">
     Now I don’t have money 😒<br><br>
     but soon I will get a job,<br>
-    at that time I will buy you for sure 💖✨
+    at that time I will buy you for sure💖🤞
+    wait untill that man.
   </div>
 
   <button class="btn" onclick="show('p7')">
@@ -382,6 +572,7 @@ body{
 </div>
 
 <!-- PAGE 7 -->
+
 <div class="page" id="p7">
 
   <div class="title">Happy Birthday Machan 🎀</div>
@@ -396,7 +587,11 @@ body{
 
     <br><br>
 
-    Thank you so much for everything...Remember one thing...Always live your life the way you want...Go wherever you wish, enjoy every moment and never get confused because of what others say...Just stay the same stupid Dupit forever...few friends are there...avunga friends ah matum irindha nala irukum...💖🎀
+    Thank you so much for everything...Remember one thing...Always live your life the way you want...Go wherever you wish, enjoy every moment and never get confused because of what others say...
+
+    <br><br>
+
+    Just stay the same stupid Dupit forever 💖🎀 
 
   </div>
 
@@ -415,6 +610,44 @@ function show(id){
   });
 
   document.getElementById(id).classList.add('active');
+}
+
+/* CANDLES */
+
+function blowCandles(){
+
+  document.getElementById("flame1").style.display="none";
+  document.getElementById("flame2").style.display="none";
+  document.getElementById("flame3").style.display="none";
+
+  document.getElementById("finalMessage").style.display="block";
+}
+
+/* CALL PAGE */
+
+function openCallPage(){
+
+  show('callPage');
+
+  let audio=document.getElementById("ringtone");
+
+  audio.play();
+}
+
+function declineCall(){
+
+  document.getElementById("sorryText").style.display="block";
+}
+
+function acceptCall(){
+
+  let audio=document.getElementById("ringtone");
+
+  audio.pause();
+
+  document.getElementById("callBtns").style.display="none";
+
+  document.getElementById("ageText").style.display="block";
 }
 
 /* N QUEEN */
@@ -477,9 +710,9 @@ function check(){
 
   if(q.length!==4){
 
-    setStatus("Place 4 queens 👑");
+    document.getElementById("status").innerText="Place 4 queens 👑";
 
-    lock();
+    document.getElementById("nextBtn").disabled=true;
 
     return;
   }
@@ -497,29 +730,17 @@ function check(){
         Math.abs(r1-r2)==Math.abs(c1-c2)
       ){
 
-        setStatus("Queens attacking 😭");
+        document.getElementById("status").innerText="Queens attacking 😭";
 
-        lock();
+        document.getElementById("nextBtn").disabled=true;
 
         return;
       }
     }
   }
 
-  setStatus("Solved 🎉");
+  document.getElementById("status").innerText="Solved 🎉";
 
-  unlock();
-}
-
-function setStatus(t){
-  document.getElementById("status").innerText=t;
-}
-
-function lock(){
-  document.getElementById("nextBtn").disabled=true;
-}
-
-function unlock(){
   document.getElementById("nextBtn").disabled=false;
 }
 
