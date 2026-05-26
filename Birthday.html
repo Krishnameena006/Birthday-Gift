@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dupit Birthday</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#ffd6e7;
+  overflow:hidden;
+}
+
+/* PAGE */
+.page{
+  display:none;
+  width:100%;
+  height:100vh;
+  padding:20px;
+}
+
+.active{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+}
+
+/* TITLES */
+.name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:90px;
+  color:#ff4f8b;
+  text-shadow:0 0 10px white,0 0 20px #ff8fb1;
+  margin-bottom:20px;
+}
+
+.title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:58px;
+  color:#ff4f8b;
+  margin-bottom:18px;
+  letter-spacing:2px;
+}
+
+/* TEXT */
+.text{
+  color:#ff4f8b;
+  font-size:25px;
+  line-height:1.6;
+  max-width:700px;
+}
+
+/* FINAL LONG MESSAGE */
+.final-text{
+  width:92%;
+  max-width:980px;
+  color:#ff4f8b;
+  font-size:20px;
+  line-height:1.8;
+  text-align:center;
+  font-family:'Poppins',sans-serif;
+}
+
+/* BUTTON */
+.btn{
+  margin-top:25px;
+  padding:14px 35px;
+  border:none;
+  border-radius:40px;
+  background:#ff4f8b;
+  color:white;
+  font-size:20px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+}
+
+.btn:disabled{
+  opacity:0.5;
+  cursor:not-allowed;
+}
+
+/* CAKE */
+.scene{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.cake{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.candle{
+  width:12px;
+  height:55px;
+  background:linear-gradient(to bottom,white,gold);
+  border-radius:10px;
+  position:relative;
+}
+
+.flame{
+  width:20px;
+  height:30px;
+  background:radial-gradient(circle,#fff4a3,orange);
+  position:absolute;
+  top:-28px;
+  left:-4px;
+  border-radius:50% 50% 50% 0;
+}
+
+.layer{
+  border:3px solid gold;
+  background:white;
+}
+
+.top{
+  width:100px;
+  height:45px;
+  border-radius:15px;
+}
+
+.middle{
+  width:160px;
+  height:55px;
+  border-radius:18px;
+  margin-top:5px;
+}
+
+.bottom{
+  width:230px;
+  height:65px;
+  border-radius:20px;
+  margin-top:5px;
+}
+
+.plate{
+  width:280px;
+  height:18px;
+  background:white;
+  border-radius:50%;
+  margin-top:10px;
+}
+
+/* BOARD */
+.board{
+  display:grid;
+  grid-template-columns:repeat(4,80px);
+  grid-template-rows:repeat(4,80px);
+  gap:5px;
+  margin-top:20px;
+}
+
+.cell{
+  width:80px;
+  height:80px;
+  border:2px solid #ff4f8b;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:35px;
+  cursor:pointer;
+  background:white;
+}
+
+.cell.black{
+  background:#ffe4ec;
+}
+
+.status{
+  margin-top:15px;
+  color:#ff4f8b;
+  font-size:20px;
+}
+
+/* GIFTS */
+.gift-box{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.gift{
+  width:170px;
+  height:170px;
+  border-radius:15px;
+  overflow:hidden;
+  cursor:pointer;
+  border:3px solid transparent;
+  transition:0.3s;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.gift img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.gift.selected{
+  border:3px solid #ff4f8b;
+  transform:scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="p1">
+
+  <div class="name">DUPIT 🎀❤️</div>
+
+  <div class="scene">
+    <div class="cake">
+      <div class="candle">
+        <div class="flame"></div>
+      </div>
+
+      <div class="layer top"></div>
+      <div class="layer middle"></div>
+      <div class="layer bottom"></div>
+      <div class="plate"></div>
+    </div>
+  </div>
+
+  <button class="btn" onclick="show('p2')">Next 💖</button>
+
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="p2">
+
+  <div class="title">🎉 HAPPY BIRTHDAY 🎉</div>
+
+  <div class="text">
+    Happy Birthday ❤️🎂<br><br>
+    Turning 22 is just a number 😹✨<br>
+    Enjoy your life fully 💖
+  </div>
+
+  <button class="btn" onclick="show('p3')">Next 💖</button>
+
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="p3">
+
+  <div class="title">📜 RULES</div>
+
+  <div class="text">
+    Place 4 queens on 4x4 board<br>
+    No same row, column or diagonal
+  </div>
+
+  <button class="btn" onclick="show('p4'); createBoard()">Next 💖</button>
+
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="p4">
+
+  <div class="title">♟️ N-Queen Game</div>
+
+  <div class="board" id="board"></div>
+
+  <div class="status" id="status">
+    Place 4 queens 👑
+  </div>
+
+  <button class="btn" id="nextBtn" disabled onclick="show('p5')">
+    Next 💖
+  </button>
+
+</div>
+
+<!-- PAGE 5 -->
+<div class="page" id="p5">
+
+  <div class="title">🎁 Choose Gift</div>
+
+  <div class="gift-box">
+
+    <div class="gift" onclick="selectGift(this)">
+      <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=800">
+    </div>
+
+    <div class="gift" onclick="selectGift(this)">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800">
+    </div>
+
+    <div class="gift" onclick="selectGift(this)">
+      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800">
+    </div>
+
+  </div>
+
+  <button class="btn" id="giftBtn" disabled onclick="show('p6')">
+    Next 💖
+  </button>
+
+</div>
+
+<!-- PAGE 6 -->
+<div class="page" id="p6">
+
+  <div class="title">Not now... But Soon ❤️</div>
+
+  <div class="text">
+    Now I don’t have money 😒<br><br>
+    but soon I will get a job,<br>
+    at that time I will buy you for sure 💖✨
+  </div>
+
+  <button class="btn" onclick="show('p7')">
+    One Last Next 💖
+  </button>
+
+</div>
+
+<!-- PAGE 7 -->
+<div class="page" id="p7">
+
+  <div class="title">Happy Birthday Machan 🎀</div>
+
+  <div class="final-text">
+
+    You are a good friend who listens to all my stupid talks without judging and stays there whenever I feel emotionally down. It’s true, as you told, sharing problems with someone may not solve everything, but when I spoke with you, I never cried or overthought things. I always felt comfortable while telling you...you handle them in that way.
+
+    <br><br>
+
+    I lied to you the other day… I never gifted this much effort to others and never had late night calls this much with people...only rarely with friends at times...If I told you all these things directly, you will say why you are telling me this...go sleep...go study...so I did not tell you anything.
+
+    <br><br>
+
+    Thank you so much for everything...Remember one thing...Always live your life the way you want...Go wherever you wish, enjoy every moment and never get confused because of what others say...Just stay the same stupid Dupit forever...few friends are there...avunga friends ah matum irindha nala irukum...💖🎀
+
+  </div>
+
+  <button class="btn" onclick="show('p1')">
+    End 🎉
+  </button>
+
+</div>
+
+<script>
+
+function show(id){
+
+  document.querySelectorAll('.page').forEach(page=>{
+    page.classList.remove('active');
+  });
+
+  document.getElementById(id).classList.add('active');
+}
+
+/* N QUEEN */
+
+let board=[];
+
+function createBoard(){
+
+  let b=document.getElementById("board");
+
+  b.innerHTML="";
+
+  board=[];
+
+  for(let i=0;i<4;i++){
+
+    board[i]=[];
+
+    for(let j=0;j<4;j++){
+
+      board[i][j]=0;
+
+      let c=document.createElement("div");
+
+      c.classList.add("cell");
+
+      if((i+j)%2==0){
+        c.classList.add("black");
+      }
+
+      c.onclick=()=>toggle(i,j,c);
+
+      b.appendChild(c);
+    }
+  }
+}
+
+function toggle(r,c,cell){
+
+  board[r][c]=board[r][c]?0:1;
+
+  cell.innerHTML=board[r][c]?"👑":"";
+
+  check();
+}
+
+function check(){
+
+  let q=[];
+
+  for(let i=0;i<4;i++){
+
+    for(let j=0;j<4;j++){
+
+      if(board[i][j]){
+        q.push([i,j]);
+      }
+    }
+  }
+
+  if(q.length!==4){
+
+    setStatus("Place 4 queens 👑");
+
+    lock();
+
+    return;
+  }
+
+  for(let a=0;a<4;a++){
+
+    for(let b=a+1;b<4;b++){
+
+      let [r1,c1]=q[a];
+      let [r2,c2]=q[b];
+
+      if(
+        r1==r2 ||
+        c1==c2 ||
+        Math.abs(r1-r2)==Math.abs(c1-c2)
+      ){
+
+        setStatus("Queens attacking 😭");
+
+        lock();
+
+        return;
+      }
+    }
+  }
+
+  setStatus("Solved 🎉");
+
+  unlock();
+}
+
+function setStatus(t){
+  document.getElementById("status").innerText=t;
+}
+
+function lock(){
+  document.getElementById("nextBtn").disabled=true;
+}
+
+function unlock(){
+  document.getElementById("nextBtn").disabled=false;
+}
+
+/* GIFT */
+
+let selected=null;
+
+function selectGift(el){
+
+  document.querySelectorAll('.gift').forEach(g=>{
+    g.classList.remove('selected');
+  });
+
+  el.classList.add('selected');
+
+  selected=el;
+
+  // enable gift next button
+  document.getElementById("giftBtn").disabled=false;
+}
+
+</script>
+
+</body>
+</html>
