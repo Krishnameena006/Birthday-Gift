@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Dupit Birthday</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
@@ -10,325 +11,94 @@
 <style>
 
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
+  box-sizing:border-box;
 }
 
 body{
   font-family:'Poppins',sans-serif;
   background:#ffd6e7;
-  overflow-x:hidden;
-  overflow-y:auto;
+  overflow:hidden;
 }
 
 .page{
-  display:none;
   width:100%;
   min-height:100vh;
-  padding:20px;
-}
-
-.active{
   display:flex;
   justify-content:center;
   align-items:center;
-  flex-direction:column;
-  text-align:center;
-}
-
-/* PAGE 1 */
-
-#p1{
-  flex-direction:row;
   gap:60px;
+  padding:40px;
 }
 
 .photo-frame{
   padding:12px;
-  border:8px solid #ff4f8b;
+  border:10px solid #ff4f8b;
   background:white;
-  border-radius:20px;
-  box-shadow:0 0 15px rgba(0,0,0,0.2);
+  border-radius:25px;
+  box-shadow:0 0 20px rgba(0,0,0,0.15);
 }
 
 .photo-frame img{
-  width:300px;
-  height:300px;
+  width:320px;
+  height:320px;
   object-fit:cover;
-  border-radius:10px;
+  border-radius:15px;
+  display:block;
+}
+
+.content{
+  max-width:650px;
 }
 
 .name{
   font-family:'Bebas Neue',sans-serif;
-  font-size:70px;
+  font-size:90px;
   color:#ff4f8b;
-  margin-bottom:20px;
-}
-
-.title{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:58px;
-  color:#ff4f8b;
-  margin-bottom:18px;
+  margin-bottom:30px;
 }
 
 .text{
-  color:#ff4f8b;
-  font-size:24px;
-  line-height:1.7;
-  max-width:500px;
-  text-align:left;
-}
-
-.final-text{
-  width:92%;
-  max-width:980px;
-  color:#ff4f8b;
-  font-size:20px;
+  font-size:28px;
   line-height:1.8;
-  text-align:center;
-  padding-bottom:50px;
+  color:#ff4f8b;
 }
 
 .btn{
-  margin-top:25px;
-  padding:14px 35px;
+  margin-top:40px;
+  padding:18px 50px;
   border:none;
-  border-radius:40px;
+  border-radius:50px;
   background:#ff4f8b;
   color:white;
-  font-size:20px;
+  font-size:24px;
   cursor:pointer;
+  transition:0.3s;
 }
 
 .btn:hover{
   transform:scale(1.05);
 }
 
-/* CANDLE PAGE */
+@media(max-width:900px){
 
-.cake{
-  position:relative;
-  width:260px;
-  height:220px;
-}
-
-.layer1{
-  width:260px;
-  height:90px;
-  background:#ff8fab;
-  border-radius:15px;
-  position:absolute;
-  bottom:0;
-}
-
-.layer2{
-  width:200px;
-  height:70px;
-  background:#ffb3c6;
-  border-radius:15px;
-  position:absolute;
-  bottom:80px;
-  left:30px;
-}
-
-.layer3{
-  width:140px;
-  height:55px;
-  background:#ffc2d1;
-  border-radius:15px;
-  position:absolute;
-  bottom:140px;
-  left:60px;
-}
-
-.candle{
-  width:18px;
-  height:60px;
-  background:white;
-  position:absolute;
-  bottom:190px;
-  border-radius:5px;
-}
-
-.c1{ left:70px; }
-.c2{ left:120px; }
-.c3{ left:170px; }
-
-.flame{
-  width:18px;
-  height:28px;
-  background:orange;
-  border-radius:50%;
-  position:absolute;
-  top:-22px;
-  animation:flicker 0.4s infinite;
-}
-
-@keyframes flicker{
-  0%{transform:scale(1);}
-  50%{transform:scale(1.1);}
-  100%{transform:scale(1);}
-}
-
-#finalMessage{
-  display:none;
-  margin-top:30px;
-  color:#ff4f8b;
-  font-size:28px;
-}
-
-/* CALL PAGE */
-
-.call-box{
-  background:white;
-  width:320px;
-  padding:30px;
-  border-radius:25px;
-  box-shadow:0 0 20px rgba(0,0,0,0.2);
-}
-
-.incoming{
-  font-size:22px;
-  color:gray;
-}
-
-.caller{
-  margin-top:20px;
-  font-size:34px;
-  color:#ff4f8b;
-  font-weight:bold;
-}
-
-.age-text{
-  margin-top:25px;
-  font-size:24px;
-  color:#ff4f8b;
-  line-height:1.6;
-  display:none;
-}
-
-.call-buttons{
-  margin-top:35px;
-  display:flex;
-  justify-content:space-between;
-}
-
-.accept,.decline{
-  border:none;
-  padding:14px 22px;
-  border-radius:50px;
-  color:white;
-  cursor:pointer;
-  font-size:18px;
-}
-
-.accept{
-  background:#28c76f;
-}
-
-.decline{
-  background:#ea5455;
-}
-
-.sorry{
-  margin-top:25px;
-  color:#ff4f8b;
-  display:none;
-  font-size:18px;
-}
-
-/* BOARD */
-
-.board{
-  display:grid;
-  grid-template-columns:repeat(4,80px);
-  gap:5px;
-  margin-top:20px;
-}
-
-.cell{
-  width:80px;
-  height:80px;
-  border:2px solid #ff4f8b;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:35px;
-  cursor:pointer;
-  background:white;
-}
-
-.cell.black{
-  background:#ffe4ec;
-}
-
-.status{
-  margin-top:15px;
-  color:#ff4f8b;
-  font-size:20px;
-}
-
-/* GIFTS */
-
-.gift-box{
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-
-.gift{
-  width:170px;
-  height:170px;
-  border-radius:15px;
-  overflow:hidden;
-  cursor:pointer;
-  border:3px solid transparent;
-}
-
-.gift img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.gift.selected{
-  border:3px solid #ff4f8b;
-}
-
-@media(max-width:768px){
-
-  #p1{
+  .page{
     flex-direction:column;
-  }
-
-  .photo-frame img{
-    width:240px;
-    height:240px;
+    text-align:center;
   }
 
   .name{
-    font-size:45px;
-  }
-
-  .title{
-    font-size:40px;
+    font-size:55px;
   }
 
   .text{
-    text-align:center;
-    font-size:20px;
+    font-size:22px;
   }
 
-  .final-text{
-    font-size:17px;
-  }
-
-  .cell{
-    width:65px;
-    height:65px;
+  .photo-frame img{
+    width:250px;
+    height:250px;
   }
 
 }
@@ -338,61 +108,44 @@ body{
 
 <body>
 
-<audio id="ringtone" loop>
-  <source src="https://www.soundjay.com/phone/phone-ring-01.mp3" type="audio/mpeg">
-</audio>
-
-<!-- PAGE 1 -->
-
-<div class="page active" id="p1">
+<div class="page">
 
   <div class="photo-frame">
 
-    <!-- UPDATED IMAGE PATH -->
-    <img src="Birthday-pic.png" alt="Birthday Image">
+    <!-- IMAGE -->
+    <img src="./Birthday-pic.png" alt="Birthday Picture">
 
   </div>
 
-  <div>
+  <div class="content">
 
-    <div class="name">HAPPY BIRTHDAY DUPIT 🎀</div>
+    <div class="name">
+      HAPPY BIRTHDAY DUPIT 🎀
+    </div>
 
     <div class="text">
 
       Congratulations bro… you survived another year
       of your own stupidity 😭🎂
+
       <br><br>
 
       You’re becoming older 😂
+
       <br><br>
 
-      Enjoy your cake,
-      photos, and fake maturity for one day 😌✨
+      Enjoy your cake, photos, and fake maturity
+      for one day 😌✨
 
     </div>
 
-    <button class="btn" onclick="show('candlePage')">
+    <button class="btn">
       Next 💖
     </button>
 
   </div>
 
 </div>
-
-<!-- REST OF YOUR PAGES REMAIN SAME -->
-
-<script>
-
-function show(id){
-
-  document.querySelectorAll('.page').forEach(page=>{
-    page.classList.remove('active');
-  });
-
-  document.getElementById(id).classList.add('active');
-}
-
-</script>
 
 </body>
 </html>
