@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Dupit Birthday</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
@@ -19,30 +18,15 @@
 body{
   font-family:'Poppins',sans-serif;
   background:#ffd6e7;
-  overflow:hidden;
-  position:relative;
-  min-height:100vh;
+  overflow-x:hidden;
+  overflow-y:auto;
 }
 
-/* PAGE SYSTEM */
-
 .page{
-  position:absolute;
-  top:0;
-  left:0;
-
+  display:none;
   width:100%;
   min-height:100vh;
   padding:20px;
-
-  opacity:0;
-  visibility:hidden;
-  transform:translateX(100px);
-
-  transition:
-  opacity 0.7s ease,
-  transform 0.7s ease;
-
 }
 
 .active{
@@ -51,10 +35,6 @@ body{
   align-items:center;
   flex-direction:column;
   text-align:center;
-
-  opacity:1;
-  visibility:visible;
-  transform:translateX(0);
 }
 
 /* PAGE 1 */
@@ -66,25 +46,24 @@ body{
 
 .photo-frame{
   padding:12px;
-  border:10px solid #ff4f8b;
+  border:8px solid #ff4f8b;
   background:white;
-  border-radius:25px;
-  box-shadow:0 0 20px rgba(0,0,0,0.15);
+  border-radius:20px;
+  box-shadow:0 0 15px rgba(0,0,0,0.2);
 }
 
 .photo-frame img{
-  width:320px;
-  height:320px;
+  width:300px;
+  height:300px;
   object-fit:cover;
-  border-radius:15px;
-  display:block;
+  border-radius:10px;
 }
 
 .name{
   font-family:'Bebas Neue',sans-serif;
-  font-size:90px;
+  font-size:70px;
   color:#ff4f8b;
-  margin-bottom:30px;
+  margin-bottom:20px;
 }
 
 .title{
@@ -98,7 +77,8 @@ body{
   color:#ff4f8b;
   font-size:24px;
   line-height:1.7;
-  max-width:650px;
+  max-width:500px;
+  text-align:left;
 }
 
 .final-text{
@@ -112,15 +92,14 @@ body{
 }
 
 .btn{
-  margin-top:30px;
-  padding:16px 40px;
+  margin-top:25px;
+  padding:14px 35px;
   border:none;
-  border-radius:50px;
+  border-radius:40px;
   background:#ff4f8b;
   color:white;
-  font-size:22px;
+  font-size:20px;
   cursor:pointer;
-  transition:0.3s;
 }
 
 .btn:hover{
@@ -319,8 +298,6 @@ body{
   border:3px solid #ff4f8b;
 }
 
-/* MOBILE */
-
 @media(max-width:768px){
 
   #p1{
@@ -333,11 +310,11 @@ body{
   }
 
   .name{
-    font-size:50px;
+    font-size:45px;
   }
 
   .title{
-    font-size:42px;
+    font-size:40px;
   }
 
   .text{
@@ -371,25 +348,22 @@ body{
 
 <div class="page active" id="p1">
 
-  <div class="photo-frame">
-    <img src="./Birthday-pic.png" alt="Birthday Picture">
-  </div>
+<div class="photo-frame">
 
+  <img src="./Birthday-pic.png" alt="Birthday Picture">
+
+</div>
   <div>
 
-    <div class="name">
-      HAPPY BIRTHDAY DUPIT 🎀
-    </div>
+    <div class="name">HAPPY BIRTHDAY DUPIT 🎀</div>
 
     <div class="text">
 
       Congratulations bro… you survived another year
       of your own stupidity 😭🎂
-
       <br><br>
 
       You’re becoming older 😂
-
       <br><br>
 
       Enjoy your cake,
@@ -435,7 +409,8 @@ body{
 
   <div id="finalMessage">
 
-    Candles gone... May all your wishes come true 💖
+    Candles gone... May what all you wished come true...
+    This year you will get all you dreamed man.
 
     <br>
 
@@ -458,13 +433,12 @@ body{
     </div>
 
     <div class="caller">
-      Accept the call
+      Accept the call 
     </div>
 
     <div class="age-text" id="ageText">
       Congratulations 😭<br>
       You are 22 now 💀🎂
-
       <br>
 
       <button class="btn" onclick="show('p2')">
@@ -500,9 +474,11 @@ body{
 
   <div class="text" style="text-align:center;">
 
-    Turning 22... finally done with studies...
-    soon you will get everything you dreamed 💖
-
+    Turning 22...Age is just a number man...As you wish now you have a 
+    job...finally done with your studies...soon you will get what all you
+    dreamed...and live happily...dont know you still remeber what you told me 
+    that day...But soon you will have life you wantead
+    <br>
   </div>
 
   <button class="btn" onclick="show('p3')">
@@ -518,19 +494,15 @@ body{
   <div class="title">📜 RULES</div>
 
   <div class="text" style="text-align:center;">
-
-    Place 4 queens on 4x4 board
-
-    <br><br>
-
-    No same row<br>
-    No same column<br>
-    No same diagonal
-
+    Place 4 queens on 4x4 board<br>
+    No same row
+    no same column 
+    no same diagonal
+    queen should not meet.
   </div>
 
   <button class="btn" onclick="show('p4'); createBoard()">
-    Start Game 👑
+    Next 💖
   </button>
 
 </div>
@@ -539,7 +511,7 @@ body{
 
 <div class="page" id="p4">
 
-  <div class="title">Solve This N-Queen 👑</div>
+  <div class="title">solve this N-Queen </div>
 
   <div class="board" id="board"></div>
 
@@ -585,21 +557,17 @@ body{
 
 <div class="page" id="p6">
 
-  <div class="title">Not Now... But Soon ❤️</div>
+  <div class="title">Not now... But Soon ❤️</div>
 
   <div class="text" style="text-align:center;">
-
-    Now I don’t have money 😒
-
-    <br><br>
-
-    But soon after getting a job,
-    I will buy it for you 💖
-
+    Now I don’t have money 😒<br><br>
+    but soon I will get a job,<br>
+    at that time I will buy you for sure💖🤞
+    wait untill that man.
   </div>
 
   <button class="btn" onclick="show('p7')">
-    Final Page 💖
+    One Last Next 💖
   </button>
 
 </div>
@@ -608,52 +576,41 @@ body{
 
 <div class="page" id="p7">
 
-  <div class="title">
-    Happy Birthday Machan 🎀
-  </div>
+  <div class="title">Happy Birthday Machan 🎀</div>
 
   <div class="final-text">
 
-    Thank you for always listening to my stupid talks,
-    staying during bad times and making me feel comfortable.
+    You are a good friend who listens to all my stupid talks without judging and stays there whenever I feel emotionally down. It’s true, as you told, sharing problems with someone may not solve everything, but when I spoke with you, I never cried or overthought things. I always felt comfortable while telling you...you handle them in that way.
 
     <br><br>
 
-    Always stay happy,
-    enjoy your life and never change 💖
+    I lied to you the other day… I never gifted this much effort to others and never had late night calls this much with people...only rarely with friends at times...If I told you all these things directly, you will say why you are telling me this...go sleep...go study...so I did not tell you anything.
 
     <br><br>
 
-    Just stay the same stupid Dupit forever 🎀
+    Thank you so much for everything...Remember one thing...Always live your life the way you want...Go wherever you wish, enjoy every moment and never get confused because of what others say...
+
+    <br><br>
+
+    Just stay the same stupid Dupit forever 💖🎀 
 
   </div>
 
   <button class="btn" onclick="show('p1')">
-    Restart 🎉
+    End 🎉
   </button>
 
 </div>
 
 <script>
 
-/* PAGE TRANSITION */
-
 function show(id){
 
-  let current=document.querySelector(".page.active");
+  document.querySelectorAll('.page').forEach(page=>{
+    page.classList.remove('active');
+  });
 
-  if(current){
-    current.classList.remove("active");
-  }
-
-  setTimeout(()=>{
-
-    document
-    .getElementById(id)
-    .classList.add("active");
-
-  },200);
-
+  document.getElementById(id).classList.add('active');
 }
 
 /* CANDLES */
@@ -667,7 +624,7 @@ function blowCandles(){
   document.getElementById("finalMessage").style.display="block";
 }
 
-/* CALL */
+/* CALL PAGE */
 
 function openCallPage(){
 
@@ -749,9 +706,7 @@ function check(){
       if(board[i][j]){
         q.push([i,j]);
       }
-
     }
-
   }
 
   if(q.length!==4){
@@ -782,9 +737,7 @@ function check(){
 
         return;
       }
-
     }
-
   }
 
   document.getElementById("status").innerText="Solved 🎉";
