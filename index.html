@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nishe machan/<title>
+<title>Nishe machan</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *{
@@ -439,16 +439,12 @@ function blowCandles(){
   document.getElementById("finalMessage").style.display="block";
 }
 function openCallPage(){
-  show('callPage');
-  let audio=document.getElementById("ringtone");
-  audio.play();
-}
+   show('callPage');
+ }
 function declineCall(){
   document.getElementById("sorryText").style.display="block";
 }
 function acceptCall(){
-  let audio=document.getElementById("ringtone");
-  audio.pause();
   document.getElementById("callBtns").style.display="none";
   document.getElementById("ageText").style.display="block";
 }
