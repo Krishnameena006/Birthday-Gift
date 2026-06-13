@@ -3,32 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dupit Birthday</title>
-
+<title>Nishe machan/title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-
 <style>
-
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
 }
-
 body{
   font-family:'Poppins',sans-serif;
   background:#ffd6e7;
   overflow-x:hidden;
   overflow-y:auto;
 }
-
 .page{
   display:none;
   width:100%;
   min-height:100vh;
   padding:20px;
 }
-
 .active{
   display:flex;
   justify-content:center;
@@ -36,14 +30,10 @@ body{
   flex-direction:column;
   text-align:center;
 }
-
-/* PAGE 1 */
-
 #p1{
   flex-direction:row;
   gap:60px;
 }
-
 .photo-frame{
   padding:12px;
   border:8px solid #ff4f8b;
@@ -51,28 +41,24 @@ body{
   border-radius:20px;
   box-shadow:0 0 15px rgba(0,0,0,0.2);
 }
-
 .photo-frame img{
   width:300px;
   height:300px;
   object-fit:cover;
   border-radius:10px;
 }
-
 .name{
   font-family:'Bebas Neue',sans-serif;
   font-size:70px;
   color:#ff4f8b;
   margin-bottom:20px;
 }
-
 .title{
   font-family:'Bebas Neue',sans-serif;
   font-size:58px;
   color:#ff4f8b;
   margin-bottom:18px;
 }
-
 .text{
   color:#ff4f8b;
   font-size:24px;
@@ -80,7 +66,6 @@ body{
   max-width:500px;
   text-align:left;
 }
-
 .final-text{
   width:92%;
   max-width:980px;
@@ -90,7 +75,6 @@ body{
   text-align:center;
   padding-bottom:50px;
 }
-
 .btn{
   margin-top:25px;
   padding:14px 35px;
@@ -101,19 +85,14 @@ body{
   font-size:20px;
   cursor:pointer;
 }
-
 .btn:hover{
   transform:scale(1.05);
 }
-
-/* CANDLE PAGE */
-
 .cake{
   position:relative;
   width:260px;
   height:220px;
 }
-
 .layer1{
   width:260px;
   height:90px;
@@ -122,7 +101,6 @@ body{
   position:absolute;
   bottom:0;
 }
-
 .layer2{
   width:200px;
   height:70px;
@@ -132,7 +110,6 @@ body{
   bottom:80px;
   left:30px;
 }
-
 .layer3{
   width:140px;
   height:55px;
@@ -142,7 +119,6 @@ body{
   bottom:140px;
   left:60px;
 }
-
 .candle{
   width:18px;
   height:60px;
@@ -151,11 +127,9 @@ body{
   bottom:190px;
   border-radius:5px;
 }
-
 .c1{ left:70px; }
 .c2{ left:120px; }
 .c3{ left:170px; }
-
 .flame{
   width:18px;
   height:28px;
@@ -165,22 +139,17 @@ body{
   top:-22px;
   animation:flicker 0.4s infinite;
 }
-
 @keyframes flicker{
   0%{transform:scale(1);}
   50%{transform:scale(1.1);}
   100%{transform:scale(1);}
 }
-
 #finalMessage{
   display:none;
   margin-top:30px;
   color:#ff4f8b;
   font-size:28px;
 }
-
-/* CALL PAGE */
-
 .call-box{
   background:white;
   width:320px;
@@ -188,19 +157,16 @@ body{
   border-radius:25px;
   box-shadow:0 0 20px rgba(0,0,0,0.2);
 }
-
 .incoming{
   font-size:22px;
   color:gray;
 }
-
 .caller{
   margin-top:20px;
   font-size:34px;
   color:#ff4f8b;
   font-weight:bold;
 }
-
 .age-text{
   margin-top:25px;
   font-size:24px;
@@ -208,13 +174,11 @@ body{
   line-height:1.6;
   display:none;
 }
-
 .call-buttons{
   margin-top:35px;
   display:flex;
   justify-content:space-between;
 }
-
 .accept,.decline{
   border:none;
   padding:14px 22px;
@@ -223,31 +187,24 @@ body{
   cursor:pointer;
   font-size:18px;
 }
-
 .accept{
   background:#28c76f;
 }
-
 .decline{
   background:#ea5455;
 }
-
 .sorry{
   margin-top:25px;
   color:#ff4f8b;
   display:none;
   font-size:18px;
 }
-
-/* BOARD */
-
 .board{
   display:grid;
   grid-template-columns:repeat(4,80px);
   gap:5px;
   margin-top:20px;
 }
-
 .cell{
   width:80px;
   height:80px;
@@ -259,26 +216,20 @@ body{
   cursor:pointer;
   background:white;
 }
-
 .cell.black{
   background:#ffe4ec;
 }
-
 .status{
   margin-top:15px;
   color:#ff4f8b;
   font-size:20px;
 }
-
-/* GIFTS */
-
 .gift-box{
   display:flex;
   gap:20px;
   flex-wrap:wrap;
   justify-content:center;
 }
-
 .gift{
   width:170px;
   height:170px;
@@ -287,212 +238,127 @@ body{
   cursor:pointer;
   border:3px solid transparent;
 }
-
 .gift img{
   width:100%;
   height:100%;
   object-fit:cover;
 }
-
 .gift.selected{
   border:3px solid #ff4f8b;
 }
-
 @media(max-width:768px){
-
   #p1{
     flex-direction:column;
   }
-
   .photo-frame img{
     width:240px;
     height:240px;
   }
-
   .name{
     font-size:45px;
   }
-
   .title{
     font-size:40px;
   }
-
   .text{
     text-align:center;
     font-size:20px;
   }
-
   .final-text{
     font-size:17px;
   }
-
   .cell{
     width:65px;
     height:65px;
   }
-
 }
-
 </style>
 </head>
-
 <body>
-
-<!-- AUDIO -->
-
-<audio id="ringtone" loop>
-  <source src="https://www.soundjay.com/phone/phone-ring-01.mp3" type="audio/mpeg">
-</audio>
-
-<!-- PAGE 1 -->
-
 <div class="page active" id="p1">
-
 <div class="photo-frame">
-
   <img src="./Birthday-pic.png" alt="Birthday Picture">
-
 </div>
   <div>
-
-    <div class="name">HAPPY BIRTHDAY DUPIT 🎀</div>
-
+    <div class="name">Happy Birthday Dupit Man 🎀</div>
     <div class="text">
-
-      Congratulations bro… you survived another year
-      of your own stupidity 😭🎂
-      <br><br>
-
+      Congratulations Man…you survived another year of your own stupidity...🎂
+      <br>
       You’re becoming older 😂
-      <br><br>
-
-      Enjoy your cake,
-      photos, and fake maturity for one day 😌✨
-
+      <br>
+      come lets have a small cake cutting,Always be happy live your life like you wish, and enjoy your fake maturity for one day 😌✨
     </div>
-
     <button class="btn" onclick="show('candlePage')">
       Next 💖
     </button>
-
   </div>
-
 </div>
-
-<!-- CANDLE PAGE -->
-
 <div class="page" id="candlePage">
-
   <div class="cake">
-
     <div class="layer1"></div>
     <div class="layer2"></div>
     <div class="layer3"></div>
-
     <div class="candle c1">
       <div class="flame" id="flame1"></div>
     </div>
-
     <div class="candle c2">
       <div class="flame" id="flame2"></div>
     </div>
-
     <div class="candle c3">
       <div class="flame" id="flame3"></div>
     </div>
-
   </div>
-
   <button class="btn" onclick="blowCandles()">
     Blow Candles 💨
   </button>
-
   <div id="finalMessage">
-
-    Candles gone... May what all you wished come true...
-    This year you will get all you dreamed man.
-
+    Candles gone...May what all you wished come true...and get all you dreamed and wished for.
     <br>
-
     <button class="btn" onclick="openCallPage()">
       Next 💖
     </button>
-
   </div>
-
 </div>
-
-<!-- CALL PAGE -->
-
 <div class="page" id="callPage">
-
   <div class="call-box">
-
     <div class="incoming">
-      📞 Incoming Call
+      📞 Kitchu...
     </div>
-
     <div class="caller">
       Accept the call 
     </div>
-
     <div class="age-text" id="ageText">
-      Congratulations 😭<br>
       You are 22 now 💀🎂
       <br>
-
       <button class="btn" onclick="show('p2')">
         Continue 💖
       </button>
     </div>
-
     <div class="call-buttons" id="callBtns">
-
       <button class="decline" onclick="declineCall()">
         Decline ❌
       </button>
-
       <button class="accept" onclick="acceptCall()">
         Accept 📞
       </button>
-
     </div>
-
     <div class="sorry" id="sorryText">
-      Sorry 😭 Please accept the reality...
+      Sorry 😭 you should only accept the call no other way machan...
     </div>
-
   </div>
-
 </div>
-
-<!-- PAGE 2 -->
-
 <div class="page" id="p2">
-
-  <div class="title">🎉 HAPPY BIRTHDAY 🎉</div>
-
+  <div class="title">🎉 Happiest birthday Machan🎉</div>
   <div class="text" style="text-align:center;">
-
-    Turning 22...Age is just a number man...As you wish now you have a 
-    job...finally done with your studies...soon you will get what all you
-    dreamed...and live happily...dont know you still remeber what you told me 
-    that day...But soon you will have life you wantead
+    Age is just a number man...As you wish now you have a job...finally done with your studies...soon you will get what all you...dreamed...and live happily...I know you will not remeber anything what you told me ...But soon you will have life you wantead.
     <br>
   </div>
-
   <button class="btn" onclick="show('p3')">
     Next 💖
   </button>
-
 </div>
-
-<!-- PAGE 3 -->
-
 <div class="page" id="p3">
-
-  <div class="title">📜 RULES</div>
-
+  <div class="title">Know more...Cause no more looking back button</div>
   <div class="text" style="text-align:center;">
     Place 4 queens on 4x4 board<br>
     No same row<br>
@@ -500,268 +366,155 @@ body{
     no same diagonal<br>
     queen should not meet.
   </div>
-
   <button class="btn" onclick="show('p4'); createBoard()">
     Next 💖
   </button>
-
 </div>
-
-<!-- PAGE 4 -->
-
 <div class="page" id="p4">
-
-  <div class="title">solve this N-Queen </div>
-
+  <div class="title">Everyone will have problems in life...Dont let your <br>
+    self down...Till date you did good...Now you can do this also </div>
   <div class="board" id="board"></div>
-
   <div class="status" id="status">
     Place 4 queens 👑
   </div>
-
   <button class="btn" id="nextBtn" disabled onclick="show('p5')">
     Next 💖
   </button>
-
 </div>
-
-<!-- PAGE 5 -->
-
 <div class="page" id="p5">
-
   <div class="title">🎁 Choose one Gift</div>
-
   <div class="gift-box">
-
     <div class="gift" onclick="selectGift(this)">
       <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=800">
     </div>
-
     <div class="gift" onclick="selectGift(this)">
       <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800">
     </div>
-
     <div class="gift" onclick="selectGift(this)">
       <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800">
     </div>
-
   </div>
-
   <button class="btn" id="giftBtn" disabled onclick="show('p6')">
     Next 💖
   </button>
-
 </div>
-
-<!-- PAGE 6 -->
-
 <div class="page" id="p6">
-
   <div class="title">Not now... But Soon ❤️</div>
-
   <div class="text" style="text-align:center;">
-    Now I don’t have money 😒<br><br>
-    but soon I will get a job,<br>
+    Now I don’t have money or any savings😒 but soon when i get a job,<br>
     at that time I will buy you for sure💖🤞
   </div>
-
   <button class="btn" onclick="show('p7')">
     One Last Next 💖
   </button>
-
 </div>
-
-<!-- PAGE 7 -->
-
 <div class="page" id="p7">
-
   <div class="title">Happy Birthday Machan 🎀</div>
-
   <div class="final-text">
-
     You are a good friend who listens to all my stupid talks without judging and stays there whenever I feel emotionally down. It’s true, as you told, sharing problems with someone may not solve everything, but when I spoke with you, I never cried or overthought things. I always felt comfortable while telling you...you handle them in that way.
-
-    <br><br>
-
-    I lied to you the other day… I never gifted this much effort to others and never had late night calls this much with people...only rarely with friends at times...If I told you all these things directly, you will say why you are telling me this...go sleep...go study...so I did not tell you anything...First call i gave you only each time...That way my stupidity...few times you were and few time you were not...But its okay.
-    
-    <br><br>
-    
-    First time in my life...I’ve liked someone from 10th...Just to type out those two words, it took me 2 hours....But nenga atha ah kuda kandukala…replied with a GIF...At the end of the day, only my friends stayed on call till 4:00 with me is pavam...Few days back I told my my mom about few things...She told me something and thats true...Not told anyone...when we finally do, and it gets ignored like that… it hurts more than we show 
-
-    <br><br>
-
+    <br>
+    I lied to you the other day…I never gifted this much to others unless and until they ask me and never had late night calls much with people...only rarely with friends at times...If I told you all these things directly, you will say why you are telling me this now...go sleep...go study...so I did not tell you anything...First call i gave you only each time...Whwn you were not there only i had my friends to tell them...But its okay.
+    <br>
+    First time in my life...Just to type out those two words, it took me 2 hours....But nenga atha ah kuda kandukala…replied with a GIF...At the end of the day, only my friends stayed on call till 4:00 with me is pavam
+    <br>
     Anyways Thank you so much for everything till now...Remember one thing...Always live your life the way you want...Go wherever you wish, enjoy every moment and never get confused because of what others say...
-    
-   <br><br>
-
-    Just stay the same stupid Dupit forever 💖🎀 
-
+   <br>
+    People speak a lot...Dont hear them out...Just stay the same stupid Dupit forever...Again happy birthday💖🎀 
   </div>
-
   <button class="btn" onclick="show('p1')">
     End 🎉
   </button>
-
 </div>
-
 <script>
-
 function show(id){
-
   document.querySelectorAll('.page').forEach(page=>{
     page.classList.remove('active');
   });
-
   document.getElementById(id).classList.add('active');
 }
-
-/* CANDLES */
-
 function blowCandles(){
-
   document.getElementById("flame1").style.display="none";
   document.getElementById("flame2").style.display="none";
   document.getElementById("flame3").style.display="none";
-
   document.getElementById("finalMessage").style.display="block";
 }
-
-/* CALL PAGE */
-
 function openCallPage(){
-
   show('callPage');
-
   let audio=document.getElementById("ringtone");
-
   audio.play();
 }
-
 function declineCall(){
-
   document.getElementById("sorryText").style.display="block";
 }
-
 function acceptCall(){
-
   let audio=document.getElementById("ringtone");
-
   audio.pause();
-
   document.getElementById("callBtns").style.display="none";
-
   document.getElementById("ageText").style.display="block";
 }
-
-/* N QUEEN */
-
 let board=[];
-
 function createBoard(){
-
   let b=document.getElementById("board");
-
   b.innerHTML="";
-
   board=[];
-
   for(let i=0;i<4;i++){
-
     board[i]=[];
-
     for(let j=0;j<4;j++){
-
       board[i][j]=0;
-
       let c=document.createElement("div");
-
       c.classList.add("cell");
-
       if((i+j)%2==0){
         c.classList.add("black");
       }
-
       c.onclick=()=>toggle(i,j,c);
-
       b.appendChild(c);
     }
   }
 }
-
 function toggle(r,c,cell){
-
   board[r][c]=board[r][c]?0:1;
-
   cell.innerHTML=board[r][c]?"👑":"";
-
   check();
 }
-
 function check(){
-
   let q=[];
-
   for(let i=0;i<4;i++){
-
     for(let j=0;j<4;j++){
-
       if(board[i][j]){
         q.push([i,j]);
       }
     }
   }
-
   if(q.length!==4){
-
     document.getElementById("status").innerText="Place 4 queens 👑";
-
     document.getElementById("nextBtn").disabled=true;
-
     return;
   }
-
   for(let a=0;a<4;a++){
-
     for(let b=a+1;b<4;b++){
-
       let [r1,c1]=q[a];
       let [r2,c2]=q[b];
-
       if(
         r1==r2 ||
         c1==c2 ||
         Math.abs(r1-r2)==Math.abs(c1-c2)
       ){
-
         document.getElementById("status").innerText="Queens attacking 😭";
-
         document.getElementById("nextBtn").disabled=true;
-
         return;
       }
     }
   }
-
   document.getElementById("status").innerText="Solved 🎉";
-
   document.getElementById("nextBtn").disabled=false;
 }
-
-/* GIFT */
-
 function selectGift(el){
-
   document.querySelectorAll('.gift').forEach(g=>{
     g.classList.remove('selected');
   });
-
   el.classList.add('selected');
-
   document.getElementById("giftBtn").disabled=false;
 }
-
 </script>
-
 </body>
 </html>
